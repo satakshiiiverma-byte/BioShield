@@ -1,0 +1,93 @@
+1. ECG (AD8232)
+
+Normal: Stable sinus rhythm (60–100 bpm, no irregular peaks).
+
+Warning: Arrhythmia suspicion (irregular R-R intervals, tachycardia >100 bpm, bradycardia <60 bpm).
+
+Critical: Ventricular fibrillation, prolonged tachycardia (>150 bpm), or absent signal.
+
+(ECG is analyzed by the AI model, but these ranges are good for rule-based checks[if the model doesn't work at all].)
+
+2. Heart Rate (MAX30102, HR output)
+
+Normal: 60–100 bpm (resting adults).
+
+Warning: 100–120 bpm (mild tachycardia) OR 50–59 bpm (mild bradycardia).
+
+Critical: <50 bpm or >120 bpm (severe brady/tachycardia).
+
+3. SpO₂ (MAX30102, oxygen saturation)
+
+Normal: 95–100%.
+
+Warning: 91–94% (mild hypoxemia).
+
+Critical: ≤90% (severe hypoxemia, medical emergency).
+
+4. Blood Pressure (MPX5050DP + algorithm)
+
+(approx. converted into clinical categories)
+
+Normal: SBP 90–120 mmHg, DBP 60–80 mmHg.
+
+Warning:
+
+Pre-hypertension: SBP 121–139 OR DBP 81–89.
+
+Hypotension: SBP 80–89 OR DBP <60.
+
+Critical:
+
+Hypertension stage 2: SBP ≥160 OR DBP ≥100.
+
+Severe hypotension: SBP <80.
+
+5. Body Temperature (DS18B20, skin contact)
+
+Normal: 36.0–37.5 °C.
+
+Warning:
+
+Mild hypothermia: 35–35.9 °C.
+
+Low-grade fever: 37.6–38.0 °C.
+
+Critical:
+
+Hypothermia: <35 °C.
+
+High fever: >38.0 °C.
+
+6. Ambient Temperature & Humidity (DHT22)
+
+Normal: 20–30 °C, 30–60% RH.
+
+Warning: 10–19 °C OR 31–40 °C (cold/heat stress zone).
+
+Critical: <10 °C OR >40 °C, humidity >85% (extreme conditions).
+
+7. UV Radiation (ML8511)
+
+Normal: UV index 0–2 (safe).
+
+Warning: UV index 3–5 (moderate risk).
+
+Critical: UV index ≥6 (high risk of skin/eye damage).
+
+8. Galvanic Skin Response (GSR)
+
+(depends on baseline, relative measurement)
+
+Normal: Low conductivity (resting baseline).
+
+Warning: 20–40% increase over baseline (stress onset, mild fatigue).
+
+Critical: >40% increase over baseline (severe stress, dehydration risk).
+
+9. Electromyography (EMG)
+
+Normal: Expected low-to-moderate muscle activity at rest.
+
+Warning: Sustained abnormal spikes or tremors (indicative of fatigue/stress).
+
+Critical: Continuous abnormal high activity (possible muscle seizure, severe fatigue).
